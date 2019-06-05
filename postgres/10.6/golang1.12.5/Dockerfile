@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GOLANG_VERSION 1.12.4
+ENV GOLANG_VERSION 1.12.5
 
 RUN set -eux; \
 	\
