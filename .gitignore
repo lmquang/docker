@@ -3,3 +3,4 @@ docker-nginx
 docker-sync-with-s3
 mysql
 script
+docker-postgres-backup
