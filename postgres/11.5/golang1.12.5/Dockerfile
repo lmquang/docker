@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		curl \
 		pkg-config \
         ca-certificates \
+		gettext-base \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.12.5
@@ -56,4 +57,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && \
   go get github.com/pressly/goose/cmd/goose && \
   go get github.com/gobuffalo/packr/v2/packr2
   
+COPY sql-migrate /go/bin/
+RUN chmod +x  /go/bin/sql-migrate
+
 WORKDIR $GOPATH
